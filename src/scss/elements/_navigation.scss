@@ -1,0 +1,46 @@
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+
+    &__main{
+        margin-top:20px;
+    }
+
+    &__main--list{
+        text-decoration: none;
+        display: flex;
+    }
+
+    &__main--element{
+        padding: 10px 30px;
+        margin: 0 5px;
+        border: 0.75px solid #fff;
+        transition: .2s;
+        border-radius: 2px;
+        font-size: 1.125em;
+
+        &:hover{
+            border-color: $font-color;
+        }
+
+        &--different{
+            font-size: 0.875em;
+
+            .link{
+                color: $bg-color;
+            }
+        }
+
+        &--different:hover{
+            border-color: $ornament-color;
+        }
+
+    }
+}
+
+
+.link{
+    text-decoration: none;
+    color: $font-color;
+}
