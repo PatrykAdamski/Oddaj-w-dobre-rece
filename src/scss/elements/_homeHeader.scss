@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    background-image: url(../../assets/HeroImage.png);
+    background-position: top right;
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+
+    &--wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &--button {
+      width: 40%;
+    }
+
+    &--button:nth-child(1) {
+      margin-right: 45px;
+    }
+  }
+
+  &__intro--title {
+    font-size: 2.375em;
+    color: $font-color;
+    letter-spacing: -0.76px;
+  }
+}
