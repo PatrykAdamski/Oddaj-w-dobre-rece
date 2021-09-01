@@ -1,0 +1,35 @@
+.sectionThreeColumns {
+  background-image: url(../../assets/3ColumnsBackground.png);
+  height: 35vh;
+  display: flex;
+  justify-content: space-around;
+
+  &__column {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5vh 0;
+
+    &--number {
+      font-size: 5.625em;
+      font-weight: 300;
+      color: $secondary-color;
+    }
+
+    &--title {
+      font-size: 1.125em;
+      text-transform: uppercase;
+      color: $font-color;
+      letter-spacing: -0.36px;
+    }
+
+    &--description {
+      font-size: 1em;
+      color: $font-color;
+      letter-spacing: -0.32px;
+      text-align: center;
+    }
+  }
+}

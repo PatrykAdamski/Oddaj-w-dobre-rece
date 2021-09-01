@@ -1,6 +1,12 @@
+//******** Reset **********
 @import "./settings/reset";
 @import "./settings/fonts";
 @import "./settings/colors";
+
+//******** Base **********
 @import "./generic/base";
+
+//******** Elements **********
 @import "./elements/navigation";
 @import "./elements/homeHeader";
+@import "./elements/homeThreeColumns";
