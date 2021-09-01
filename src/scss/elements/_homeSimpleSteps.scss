@@ -1,0 +1,70 @@
+.sectionSimpleSteps {
+  &__rowUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--title {
+      margin-top: 55px;
+      font-size: 2.375em;
+      letter-spacing: -0.76px;
+      color: $font-color;
+    }
+  }
+
+  &__rowMiddle {
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    height: 32vh;
+  }
+
+  &__wrapRowMiddle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 13%;
+    height: 70%;
+
+    &--title {
+      font-size: 1.125em;
+      color: $font-color;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &::after {
+        content: "";
+        margin-top: 15px;
+        width: 70px;
+        border-top: 1px solid $font-color;
+      }
+    }
+
+    &--description {
+      font-size: 1em;
+      color: $font-color;
+      text-align: center;
+    }
+  }
+  &__rowDown {
+    display: flex;
+    justify-content: center;
+
+    &--btn {
+      margin-top: 35px;
+      margin-bottom: 80px;
+      width: 310px;
+    }
+  }
+}
