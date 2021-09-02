@@ -27,3 +27,21 @@ body {
     border-color: $ornament-color;
   }
 }
+
+.input {
+  width: 92%;
+  border: none;
+  border-bottom: 1px solid #707070;
+  margin: 15px 0 50px 0;
+  background: transparent;
+  padding: 10px 10px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.textarea {
+  resize: none;
+  width: 100%;
+}
