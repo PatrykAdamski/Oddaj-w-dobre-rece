@@ -1,0 +1,58 @@
+.sectionLogin {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+
+    &--evidence {
+      width: 70%;
+      background-color: $primary-color;
+      padding: 40px 70px;
+      margin-bottom: 50px;
+    }
+
+    &--btn {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &--title {
+    font-size: 2.5em;
+    color: $font-color;
+    letter-spacing: -0.8px;
+  }
+
+  &--input {
+    margin: 0;
+
+    &:nth-of-type(1) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &--label {
+    font-weight: 600;
+    color: $font-color;
+  }
+
+  &--btn {
+    font-size: 1.125em;
+    text-transform: none;
+    padding: 10px 20px;
+    border: 0.75px solid #fff;
+    transition: 0.2s;
+
+    &:hover {
+      border: 0.75px solid $font-color;
+    }
+  }
+}

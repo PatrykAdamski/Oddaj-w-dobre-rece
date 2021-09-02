@@ -10,12 +10,12 @@ function App() {
       <div className="nav__container">
         <div className="nav nav__main">
           <div className="nav__main--element nav__main--element--different">
-            <Link className="link" to="/login">
+            <Link className="link" to="/Login">
               Zaloguj
             </Link>
           </div>
           <div className="nav__main--element nav__main--element--different">
-            <Link className="link" to="/logup">
+            <Link className="link" to="/Logup">
               Załóż konto
             </Link>
           </div>
@@ -51,13 +51,11 @@ function App() {
         </nav>
       </div>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/logup">
+        <Route path="/Login" component={Login}></Route>
+        <Route path="/Logup">
           <Logup />
         </Route>
       </Switch>
