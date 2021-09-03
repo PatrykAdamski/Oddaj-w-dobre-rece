@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
 import Logup from "./Logup";
+import Logout from "./Logout";
 
 function App() {
   return (
@@ -54,9 +55,14 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/Login" component={Login}></Route>
+        <Route path="/Login">
+          <Login />
+        </Route>
         <Route path="/Logup">
           <Logup />
+        </Route>
+        <Route path="/Logout">
+          <Logout />
         </Route>
       </Switch>
     </Router>
