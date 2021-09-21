@@ -41,6 +41,10 @@ body {
   }
 }
 
+.invalid__value--input {
+  border-bottom-color: red;
+}
+
 .textarea {
   resize: none;
   width: 100%;

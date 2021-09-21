@@ -75,3 +75,18 @@
     }
   }
 }
+
+.invalid__value {
+  font-size: 0.8em;
+  color: red;
+  margin-top: -35px;
+  margin-bottom: 20px;
+}
+.messageSent {
+  text-align: center;
+  max-width: 250px;
+  color: green;
+  font-weight: 600;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}

@@ -1,5 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import * as Scroll from "react-scroll";
+import {
+  Link as LinkScroll,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 import Home from "./Home";
 import Login from "./Login";
 import Logup from "./Logup";
@@ -29,24 +39,24 @@ function App() {
               </Link>
             </li>
             <li className="nav__main--element">
-              <Link className="link" to="/">
+              <LinkScroll className="link" to="HomeSimpleSteps">
                 O co chodzi?
-              </Link>
+              </LinkScroll>
             </li>
             <li className="nav__main--element">
-              <Link className="link" to="/">
+              <LinkScroll className="link" to="HomeAboutUs">
                 O nas
-              </Link>
+              </LinkScroll>
             </li>
             <li className="nav__main--element">
-              <Link className="link" to="/">
+              <LinkScroll className="link" to="HomeWhoWeHelp">
                 Fundacja i organizacje
-              </Link>
+              </LinkScroll>
             </li>
             <li className="nav__main--element">
-              <Link className="link" to="/">
+              <LinkScroll className="link" to="HomeContact">
                 Kontakt
-              </Link>
+              </LinkScroll>
             </li>
           </ul>
         </nav>

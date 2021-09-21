@@ -1,0 +1,40 @@
+.homeWhoWeHelpContent {
+  &__description {
+    width: 35vw;
+    font-size: 1.375em;
+    color: $font-color;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  &__container {
+    color: $font-color;
+    margin-top: 100px;
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid $font-color;
+      margin-top: 30px;
+    }
+    &--singleWrap {
+      width: 70vw;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__organization {
+    font-family: $font-alt;
+    font-weight: 300;
+    font-size: 1.125em;
+    &--title {
+      font-size: 1.625em;
+      margin-bottom: 10px;
+    }
+    &--items {
+      font-family: $font-alt;
+      font-weight: 300;
+      font-size: 1.125em;
+    }
+  }
+}
