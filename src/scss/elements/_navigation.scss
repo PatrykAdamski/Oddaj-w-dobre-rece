@@ -46,4 +46,14 @@
 .link {
   text-decoration: none;
   color: $font-color;
+  cursor: pointer;
+}
+
+.nav__user {
+  border: none;
+  font-weight: 600;
+
+  &:hover {
+    border: none;
+  }
 }

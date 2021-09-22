@@ -57,3 +57,10 @@
     }
   }
 }
+
+.errorMsg {
+  margin-top: -10px;
+  &--password {
+    margin-top: 15px;
+  }
+}

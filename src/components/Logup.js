@@ -1,6 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Logup() {
+export default function Logup(props) {
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    emailError,
+    passwordError,
+    clearErrors,
+    clearInputs,
+    repeatPassword,
+    setRepeatPassword,
+    validatorLogup,
+  } = props;
+
   return (
     <>
       <section className="sectionLogin">
@@ -15,7 +30,10 @@ export default function Logup() {
               className="input sectionLogin--input"
               type="email"
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
+            <p className="errorMsg invalid__value">{emailError}</p>
             <label className="sectionLogin--label" for="password">
               Hasło
             </label>
@@ -23,6 +41,8 @@ export default function Logup() {
               className="input sectionLogin--input"
               type="password"
               id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             ></input>
             <label className="sectionLogin--label" for="password">
               Powtórz hasło
@@ -30,12 +50,26 @@ export default function Logup() {
             <input
               className="input sectionLogin--input"
               type="password"
-              id="password"
+              id="repeatPassword"
+              value={repeatPassword}
+              onChange={(e) => setRepeatPassword(e.target.value)}
             ></input>
+            <p className="errorMsg--password invalid__value">{passwordError}</p>
           </div>
           <div className="sectionLogin__container--btn">
-            <button className="btn sectionLogin--btn">Załóż konto</button>
-            <button className="btn sectionLogin--btn">Zaloguj się</button>
+            <button onClick={validatorLogup} className="btn sectionLogin--btn">
+              Załóż konto
+            </button>
+            <Link
+              to="/Login"
+              onClick={() => {
+                clearErrors();
+                clearInputs();
+              }}
+              className=" link btn sectionLogin--btn"
+            >
+              Zaloguj się
+            </Link>
           </div>
         </div>
       </section>

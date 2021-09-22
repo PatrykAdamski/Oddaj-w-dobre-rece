@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Logout() {
   return (
@@ -8,7 +9,9 @@ export default function Logout() {
           Wylogowanie nastąpiło pomyślnie!
         </h2>
         <div className="ornament"></div>
-        <button className="btn sectionLogin--btn">Strona główna</button>
+        <Link to="/" className=" link btn sectionLogin--btn">
+          Strona główna
+        </Link>
       </section>
     </>
   );
