@@ -6,22 +6,12 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-import * as Scroll from "react-scroll";
 import fire from "../services/firebase";
-import {
-  Link as LinkScroll,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
 import Home from "./Home";
 import Login from "./Login";
 import Logup from "./Logup";
 import Logout from "./Logout";
-import { register } from "react-scroll/modules/mixins/scroller";
 
 function App() {
   const [user, setUser] = useState("");
@@ -211,22 +201,46 @@ function App() {
               </Link>
             </li>
             <li className="nav__main--element">
-              <LinkScroll className="link" to="HomeSimpleSteps">
+              <LinkScroll
+                className="link"
+                to="HomeSimpleSteps"
+                duration={250}
+                spy={true}
+                smooth={true}
+              >
                 O co chodzi?
               </LinkScroll>
             </li>
             <li className="nav__main--element">
-              <LinkScroll className="link" to="HomeAboutUs">
+              <LinkScroll
+                className="link"
+                to="HomeAboutUs"
+                duration={250}
+                spy={true}
+                smooth={true}
+              >
                 O nas
               </LinkScroll>
             </li>
             <li className="nav__main--element">
-              <LinkScroll className="link" to="HomeWhoWeHelp">
+              <LinkScroll
+                className="link"
+                to="HomeWhoWeHelp"
+                duration={250}
+                spy={true}
+                smooth={true}
+              >
                 Fundacja i organizacje
               </LinkScroll>
             </li>
             <li className="nav__main--element">
-              <LinkScroll className="link" to="HomeContact">
+              <LinkScroll
+                className="link"
+                to="HomeContact"
+                duration={250}
+                spy={true}
+                smooth={true}
+              >
                 Kontakt
               </LinkScroll>
             </li>

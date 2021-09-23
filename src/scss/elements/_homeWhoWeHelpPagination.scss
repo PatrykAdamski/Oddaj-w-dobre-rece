@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  margin-top: 25px;
+  &__item {
+    border: 1px solid #fff;
+    color: $bg-color;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      border: 1px solid $bg-color;
+    }
+    &:nth-of-type(1) {
+      margin-left: 0;
+    }
+  }
+}

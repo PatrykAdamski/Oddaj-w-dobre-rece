@@ -1,26 +1,22 @@
 import React from "react";
 
-export default function HomeWhoWeHelpContent() {
+export default function HomeWhoWeHelpContent(props) {
+  const { name, purpose, stuff } = props;
+
   return (
     <>
-      <p className="homeWhoWeHelpContent__description">
-        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-        współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego
-        potrzebują.
-      </p>
       <div className="homeWhoWeHelpContent__container">
         <div className="homeWhoWeHelpContent__container--singleWrap">
           <div className="homeWhoWeHelpContent__organization">
             <h2 className="homeWhoWeHelpContent__organization--title">
-              Fundacja "Dbam o Zdrowie"
+              {name}
             </h2>
             <p className="homeWhoWeHelpContent__organization--description">
-              Cel i misja: Poomc osobom znajdującym się w trudnej sytuacji
-              życiowej
+              {purpose}
             </p>
           </div>
           <div className="homeWhoWeHelpContent__organization--items">
-            ubrania, jedzenie, sprzęt AGD, meble, zabawki
+            {stuff}
           </div>
         </div>
       </div>
