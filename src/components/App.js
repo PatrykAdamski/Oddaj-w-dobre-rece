@@ -12,6 +12,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Logup from "./Logup";
 import Logout from "./Logout";
+import FormHandOverStuff from "./FormHandOverStuff";
 
 function App() {
   const [user, setUser] = useState("");
@@ -250,6 +251,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/FormHandOverStuff">
+          <FormHandOverStuff />
         </Route>
         <Route path="/Login">
           <Login

@@ -1,0 +1,49 @@
+.formHandOverStuff {
+  color: $font-color;
+
+  &__margin {
+    margin-top: 20px;
+  }
+  &__image {
+    background-image: url(../../assets/Header-Form-Background.png);
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100vh;
+  }
+  &__steps {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+  &__singleStep {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    font-size: 1.375em;
+    font-weight: 300;
+
+    &--numberStep {
+      font-size: 2em;
+    }
+    &--step {
+      position: absolute;
+      top: 45%;
+    }
+    &--wrap {
+      display: flex;
+      margin-top: 70px;
+    }
+    &--rectangle {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border: 1px solid $font-color;
+      transform: rotate(45deg);
+    }
+  }
+}

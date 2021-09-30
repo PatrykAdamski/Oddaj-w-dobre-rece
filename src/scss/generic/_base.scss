@@ -28,6 +28,25 @@ body {
   }
 }
 
+.btnBack {
+  margin-right: 50px;
+}
+
+.btnNextOrBack {
+  width: 180px;
+  height: 80px;
+  border: 1px solid $font-color;
+  transition: 0.2s;
+  background-color: transparent;
+  font-size: 1.5em;
+  color: $font-color;
+  border-radius: 3px;
+  &:hover {
+    background-color: $ornament-color;
+    cursor: pointer;
+  }
+}
+
 .input {
   width: 92%;
   border: none;
@@ -48,4 +67,8 @@ body {
 .textarea {
   resize: none;
   width: 100%;
+}
+
+.hide {
+  display: none;
 }
