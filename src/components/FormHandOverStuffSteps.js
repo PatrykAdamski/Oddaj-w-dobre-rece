@@ -2,6 +2,7 @@ import React from "react";
 import FormHandOverStuffStep1 from "./FormHandOverStuffStep1";
 import FormHandOverStuffStep2 from "./FormHandOverStuffStep2";
 import FormHandOverStuffStep3 from "./FormHandOverStuffStep3";
+import FormHandOverStuffStep4 from "./FormHandOverStuffStep4";
 import FormHandOverStuffStepThankYou from "./FormHandOverStuffStepThankYou";
 
 function FormHandOverStuffSteps() {
@@ -15,7 +16,7 @@ function FormHandOverStuffSteps() {
         </p>
       </section>
       <section className="formHandOverStuffSteps__singleStep">
-        <FormHandOverStuffStepThankYou />
+        <FormHandOverStuffStep4 />
       </section>
     </>
   );

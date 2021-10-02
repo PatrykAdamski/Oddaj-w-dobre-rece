@@ -1,0 +1,24 @@
+.adressAndDateContainer {
+  display: flex;
+  justify-content: space-between;
+  & .pickupAdressContainer {
+    width: 35%;
+  }
+  & .dateOfPickupContainer {
+    width: 35%;
+    & .singleValueWrap {
+      &:nth-last-child(1) {
+        align-items: flex-start;
+        & input:nth-last-of-type(1) {
+          height: 100px;
+        }
+      }
+    }
+  }
+  & .singleValueWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}
