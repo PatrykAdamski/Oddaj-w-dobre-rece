@@ -10,10 +10,10 @@
   }
 }
 
-.customSelect {
+.customSelectContainer {
   position: relative;
   margin-left: 25px;
-  & .numberOfBags {
+  &__select {
     position: relative;
     display: flex;
     align-items: center;
@@ -24,27 +24,26 @@
     padding-left: 30px;
     font-size: 1.5em;
     font-weight: 300;
+  }
+  &__options {
+    position: absolute;
+    border: 1px solid $font-color;
+    border-radius: 2px;
+    top: 60px;
+    right: 0;
+    width: 70px;
+  }
 
-    &__options {
-      position: absolute;
-      border: 1px solid $font-color;
-      border-radius: 2px;
-      top: 60px;
-      right: 0;
-      width: 70px;
-    }
-
-    &__option {
-      padding: 5px 0px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.2s;
-      &:hover {
-        background-color: $ornament-color;
-      }
+  &__option {
+    padding: 5px 0px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      background-color: $ornament-color;
     }
   }
-  & .customArrow {
+  &__customArrow {
     position: absolute;
     top: 10px;
     right: 14px;

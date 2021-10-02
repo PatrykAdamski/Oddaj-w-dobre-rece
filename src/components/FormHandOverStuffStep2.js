@@ -11,51 +11,60 @@ function FormHandOverStuffStep2() {
   };
 
   return (
-    <div className="formHandOverStuffStep1">
-      <div className="formHandOverStuffStep1__stepNumber">Krok 2/4</div>
-      <div className="formHandOverStuffStep1__container">
-        <h2 className="formHandOverStuffStep1__title">
+    <div className="formHandOverStuffStep">
+      <div className="formHandOverStuffStep__stepNumber">Krok 2/4</div>
+      <div className="formHandOverStuffStep__container">
+        <h2 className="formHandOverStuffStep__title">
           Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
         </h2>
         <div className="formHandOverStuffStep2__containerSelect">
           <label for="numberOfBags">Liczba 60l worków: </label>
-          <div className="customSelect">
-            <div onClick={arrowRiverse} className="numberOfBags">
+          <div className="customSelectContainer">
+            <div
+              onClick={arrowRiverse}
+              className="customSelectContainer__select"
+            >
               {quantityBags}
-              <div id="listOptions" className="numberOfBags__options hide">
+              <div
+                id="listOptions"
+                className="customSelectContainer__options hide"
+              >
                 <div
                   onClick={(e) => setQuantityBags("1")}
-                  className="numberOfBags__option"
+                  className="customSelectContainer__option"
                 >
                   1
                 </div>
                 <div
                   onClick={(e) => setQuantityBags("2")}
-                  className="numberOfBags__option"
+                  className="customSelectContainer__option"
                 >
                   2
                 </div>
                 <div
                   onClick={(e) => setQuantityBags("3")}
-                  className="numberOfBags__option"
+                  className="customSelectContainer__option"
                 >
                   3
                 </div>
                 <div
                   onClick={(e) => setQuantityBags("4")}
-                  className="numberOfBags__option"
+                  className="customSelectContainer__option"
                 >
                   4
                 </div>
                 <div
                   onClick={(e) => setQuantityBags("5")}
-                  className="numberOfBags__option"
+                  className="customSelectContainer__option"
                 >
                   5
                 </div>
               </div>
             </div>
-            <span id="customArrow" className="customArrow"></span>
+            <span
+              id="customArrow"
+              className="customSelectContainer__customArrow"
+            ></span>
           </div>
         </div>
       </div>

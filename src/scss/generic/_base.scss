@@ -72,3 +72,10 @@ body {
 .hide {
   display: none;
 }
+
+.customInput {
+  border: 1px solid $font-color;
+  outline: none;
+  background-color: transparent;
+  padding: 8px 10px;
+}
