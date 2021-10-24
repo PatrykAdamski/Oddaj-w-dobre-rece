@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Provider } from "react-redux";
+import store from "../reduxStore/store";
 import {
   BrowserRouter as Router,
   Switch,
@@ -164,130 +166,132 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="nav__container">
-        <div className="nav nav__main">
-          {user ? (
-            <>
-              <div className="nav__user nav__main--element nav__main--element--different">
-                <div className="helloUser">Cześć {user.email}</div>
-              </div>
-              <div className="nav__main--element nav__main--element--different">
-                <Link onClick={handleLogout} className="link" to="/Logout">
-                  Wyloguj
+    <Provider store={store}>
+      <Router>
+        <div className="nav__container">
+          <div className="nav nav__main">
+            {user ? (
+              <>
+                <div className="nav__user nav__main--element nav__main--element--different">
+                  <div className="helloUser">Cześć {user.email}</div>
+                </div>
+                <div className="nav__main--element nav__main--element--different">
+                  <Link onClick={handleLogout} className="link" to="/Logout">
+                    Wyloguj
+                  </Link>
+                  <Redirect to="/" />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="nav__main--element nav__main--element--different">
+                  <Link className="link" to="/Login">
+                    Zaloguj
+                  </Link>
+                </div>
+                <div className="nav__main--element nav__main--element--different">
+                  <Link className="link" to="/Logup">
+                    Załóż konto
+                  </Link>
+                </div>
+              </>
+            )}
+          </div>
+          <nav className="nav nav__main">
+            <ul className="nav__main--list">
+              <li className="nav__main--element">
+                <Link className="link" to="/">
+                  Start
                 </Link>
-                <Redirect to="/" />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="nav__main--element nav__main--element--different">
-                <Link className="link" to="/Login">
-                  Zaloguj
-                </Link>
-              </div>
-              <div className="nav__main--element nav__main--element--different">
-                <Link className="link" to="/Logup">
-                  Załóż konto
-                </Link>
-              </div>
-            </>
-          )}
+              </li>
+              <li className="nav__main--element">
+                <LinkScroll
+                  className="link"
+                  to="HomeSimpleSteps"
+                  duration={250}
+                  spy={true}
+                  smooth={true}
+                >
+                  O co chodzi?
+                </LinkScroll>
+              </li>
+              <li className="nav__main--element">
+                <LinkScroll
+                  className="link"
+                  to="HomeAboutUs"
+                  duration={250}
+                  spy={true}
+                  smooth={true}
+                >
+                  O nas
+                </LinkScroll>
+              </li>
+              <li className="nav__main--element">
+                <LinkScroll
+                  className="link"
+                  to="HomeWhoWeHelp"
+                  duration={250}
+                  spy={true}
+                  smooth={true}
+                >
+                  Fundacja i organizacje
+                </LinkScroll>
+              </li>
+              <li className="nav__main--element">
+                <LinkScroll
+                  className="link"
+                  to="HomeContact"
+                  duration={250}
+                  spy={true}
+                  smooth={true}
+                >
+                  Kontakt
+                </LinkScroll>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav className="nav nav__main">
-          <ul className="nav__main--list">
-            <li className="nav__main--element">
-              <Link className="link" to="/">
-                Start
-              </Link>
-            </li>
-            <li className="nav__main--element">
-              <LinkScroll
-                className="link"
-                to="HomeSimpleSteps"
-                duration={250}
-                spy={true}
-                smooth={true}
-              >
-                O co chodzi?
-              </LinkScroll>
-            </li>
-            <li className="nav__main--element">
-              <LinkScroll
-                className="link"
-                to="HomeAboutUs"
-                duration={250}
-                spy={true}
-                smooth={true}
-              >
-                O nas
-              </LinkScroll>
-            </li>
-            <li className="nav__main--element">
-              <LinkScroll
-                className="link"
-                to="HomeWhoWeHelp"
-                duration={250}
-                spy={true}
-                smooth={true}
-              >
-                Fundacja i organizacje
-              </LinkScroll>
-            </li>
-            <li className="nav__main--element">
-              <LinkScroll
-                className="link"
-                to="HomeContact"
-                duration={250}
-                spy={true}
-                smooth={true}
-              >
-                Kontakt
-              </LinkScroll>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/FormHandOverStuff">
-          <FormHandOverStuff />
-        </Route>
-        <Route path="/Login">
-          <Login
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            emailError={emailError}
-            passwordError={passwordError}
-            clearErrors={clearErrors}
-            clearInputs={clearInputs}
-            validatorLogin={validatorLogin}
-          />
-        </Route>
-        <Route path="/Logup">
-          <Logup
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            validatorLogup={validatorLogup}
-            emailError={emailError}
-            passwordError={passwordError}
-            clearErrors={clearErrors}
-            clearInputs={clearInputs}
-            repeatPassword={repeatPassword}
-            setRepeatPassword={setRepeatPassword}
-          />
-        </Route>
-        <Route path="/Logout">
-          <Logout />
-        </Route>
-      </Switch>
-    </Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/FormHandOverStuff">
+            <FormHandOverStuff />
+          </Route>
+          <Route path="/Login">
+            <Login
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              emailError={emailError}
+              passwordError={passwordError}
+              clearErrors={clearErrors}
+              clearInputs={clearInputs}
+              validatorLogin={validatorLogin}
+            />
+          </Route>
+          <Route path="/Logup">
+            <Logup
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              validatorLogup={validatorLogup}
+              emailError={emailError}
+              passwordError={passwordError}
+              clearErrors={clearErrors}
+              clearInputs={clearInputs}
+              repeatPassword={repeatPassword}
+              setRepeatPassword={setRepeatPassword}
+            />
+          </Route>
+          <Route path="/Logout">
+            <Logout />
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import iconTshirt from "../assets/Icon-1.png";
 import iconBag from "../assets/Icon-2.png";
 import iconLoupe from "../assets/Icon-3.png";
@@ -53,9 +54,12 @@ export default function HomeSimpleSteps() {
           </div>
         </div>
         <div className="sectionSimpleSteps__rowDown">
-          <button className="btn sectionSimpleSteps__rowDown--btn">
+          <Link
+            to="/FormHandOverStuff"
+            className=" link btn sectionSimpleSteps__rowDown--btn"
+          >
             <p>Oddaj</p>Rzeczy
-          </button>
+          </Link>
         </div>
       </section>
     </>

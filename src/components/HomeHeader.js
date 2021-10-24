@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 export default function HomeHeader() {
   return (
     <>
@@ -11,9 +13,12 @@ export default function HomeHeader() {
           </h2>
           <div className="ornament header__intro--ornament"></div>
           <div className="header__intro--wrap">
-            <button className="btn header__intro--button">
+            <Link
+              to="/FormHandOverStuff"
+              className="link btn header__intro--button"
+            >
               <p>Oddaj</p> rzeczy
-            </button>
+            </Link>
             <button className="btn header__intro--button">
               <p>Zorganizuj</p> zbiórkę
             </button>

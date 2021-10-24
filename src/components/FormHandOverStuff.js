@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeContact from "./HomeContact";
 import FormHandOverStuffSteps from "./FormHandOverStuffSteps";
 
 function FormHandOverStuff() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <header className="header">
