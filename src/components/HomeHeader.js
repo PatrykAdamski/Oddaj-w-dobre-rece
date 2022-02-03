@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function HomeHeader() {
+export default function HomeHeader(props) {
+  const { user } = props;
   return (
     <>
       <header className="header">
@@ -14,7 +15,7 @@ export default function HomeHeader() {
           <div className="ornament header__intro--ornament"></div>
           <div className="header__intro--wrap">
             <Link
-              to="/FormHandOverStuff"
+              to={user ? "/FormHandOverStuff" : "/Login"}
               className="link btn header__intro--button"
             >
               <p>Oddaj</p> rzeczy

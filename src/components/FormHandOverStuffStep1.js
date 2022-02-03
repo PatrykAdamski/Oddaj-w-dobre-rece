@@ -1,13 +1,40 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { editFormStep1 } from "../reduxActions/actions";
 
 function FormHandOverStuffStep1(props) {
   const { setStep } = props;
-
+  const formSteps = useSelector((state) => state.formSteps);
   const dispatch = useDispatch();
+  const [whatStuff, setWhatStuff] = useState(formSteps.whatStuff);
 
-  const [whatStuff, setWhatStuff] = useState("");
+  let objWhatStuff = [
+    {
+      value: "Dobre ubrania",
+      id: "thing1",
+      name: "ubrania, które nadają się do ponownego użycia",
+    },
+    {
+      value: "Ubrania do wyrzucenia",
+      id: "thing2",
+      name: "ubrania, do wyrzucenia",
+    },
+    {
+      value: "Zabawki",
+      id: "thing3",
+      name: "zabawki",
+    },
+    {
+      value: "Książki",
+      id: "thing4",
+      name: "książki",
+    },
+    {
+      value: "Inne",
+      id: "thing5",
+      name: "Inne",
+    },
+  ];
 
   const handleChangeRadio = (event) => {
     setWhatStuff(event.target.value);
@@ -17,15 +44,19 @@ function FormHandOverStuffStep1(props) {
     dispatch(editFormStep1(whatStuff));
   };
 
-  // const handleCheckedActive = () => {
-  //   const inputsStuff = document.querySelectorAll(".inputTypeRadio");
-  //   Array.from(inputsStuff).map((input) => {
-  //     if (input.value === whatStuffRadio) {
-  //       input.checked = true;
-  //     }
-  //   });
-  // };
-  // handleCheckedActive();
+  const handleCheck = () => {
+    objWhatStuff.forEach((singleElement) => {
+      const inputTypeRadio = document.querySelector(`#${singleElement.id}`);
+      if (singleElement.value === whatStuff) {
+        inputTypeRadio.checked = true;
+      }
+    });
+  };
+
+  useEffect(() => {
+    handleCheck();
+  }, []);
+
   return (
     <>
       <section className="formHandOverStuffSteps__important">
@@ -42,86 +73,26 @@ function FormHandOverStuffStep1(props) {
             <h2 className="formHandOverStuffStep__title">
               Zaznacz co chcesz oddać:
             </h2>
-            <div className="formHandOverStuffStep__typeThing">
-              <input
-                name="thing"
-                id="thing1"
-                className="inputTypeRadio"
-                type="radio"
-                value="Dobre ubrania"
-                onChange={handleChangeRadio}
-              ></input>
-              <label
-                for="thing1"
-                className="formHandOverStuffStep__typeThing--thing"
-              >
-                ubrania, które nadają się do ponownego użycia
-              </label>
-            </div>
-            <div className="formHandOverStuffStep__typeThing">
-              <input
-                name="thing"
-                onChange={handleChangeRadio}
-                id="thing2"
-                className="inputTypeRadio"
-                type="radio"
-                value="Ubrania do wyrzucenia"
-              ></input>
-              <label
-                for="thing2"
-                className="formHandOverStuffStep__typeThing--thing"
-              >
-                ubrania, do wyrzucenia
-              </label>
-            </div>
-            <div className="formHandOverStuffStep__typeThing">
-              <input
-                name="thing"
-                onChange={handleChangeRadio}
-                id="thing3"
-                className="inputTypeRadio"
-                type="radio"
-                value="Zabawki"
-              ></input>
-              <label
-                for="thing3"
-                className="formHandOverStuffStep__typeThing--thing"
-              >
-                zabawki
-              </label>
-            </div>
-            <div className="formHandOverStuffStep__typeThing">
-              <input
-                name="thing"
-                onChange={handleChangeRadio}
-                id="thing4"
-                className="inputTypeRadio"
-                type="radio"
-                value="Książki"
-              ></input>
-              <label
-                for="thing4"
-                className="formHandOverStuffStep__typeThing--thing"
-              >
-                książki
-              </label>
-            </div>
-            <div className="formHandOverStuffStep__typeThing">
-              <input
-                name="thing"
-                onChange={handleChangeRadio}
-                id="thing5"
-                className="inputTypeRadio"
-                type="radio"
-                value="Inne"
-              ></input>
-              <label
-                for="thing5"
-                className="formHandOverStuffStep__typeThing--thing"
-              >
-                Inne
-              </label>
-            </div>
+            {objWhatStuff.map((singleElement) => {
+              return (
+                <div className="formHandOverStuffStep__typeThing">
+                  <input
+                    name="thing"
+                    id={singleElement.id}
+                    className="inputTypeRadio"
+                    type="radio"
+                    value={singleElement.value}
+                    onChange={handleChangeRadio}
+                  ></input>
+                  <label
+                    for={singleElement.id}
+                    className="formHandOverStuffStep__typeThing--thing"
+                  >
+                    {singleElement.name}
+                  </label>
+                </div>
+              );
+            })}
           </div>
           <button
             onClick={() => {

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { editFormStep2 } from "../reduxActions/actions";
+import { useSelector } from "react-redux";
 
 function FormHandOverStuffStep2(props) {
   const { setStep } = props;
-  const [quantityBags, setQuantityBags] = useState("— wybierz —");
+  const formSteps = useSelector((state) => state.formSteps);
+  const [quantityBags, setQuantityBags] = useState(
+    formSteps.quantityBag || "— wybierz —"
+  );
 
   const arrowRiverse = () => {
     const arrow = document.querySelector("#customArrow");

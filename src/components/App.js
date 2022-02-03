@@ -172,6 +172,9 @@ function App() {
           <div className="nav nav__main">
             {user ? (
               <>
+                <div className="nav__main--element nav__main--element--different">
+                  <Link className="link">Oddaj rzeczy</Link>
+                </div>
                 <div className="nav__user nav__main--element nav__main--element--different">
                   <div className="helloUser">Cześć {user.email}</div>
                 </div>
@@ -253,7 +256,7 @@ function App() {
         </div>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home user={user} />
           </Route>
           <Route path="/FormHandOverStuff">
             <FormHandOverStuff />

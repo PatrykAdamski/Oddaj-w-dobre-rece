@@ -5,7 +5,8 @@ import iconBag from "../assets/Icon-2.png";
 import iconLoupe from "../assets/Icon-3.png";
 import iconArrows from "../assets/Icon-4.png";
 
-export default function HomeSimpleSteps() {
+export default function HomeSimpleSteps(props) {
+  const { user } = props;
   return (
     <>
       <section className="sectionSimpleSteps">
@@ -55,7 +56,7 @@ export default function HomeSimpleSteps() {
         </div>
         <div className="sectionSimpleSteps__rowDown">
           <Link
-            to="/FormHandOverStuff"
+            to={user ? "/FormHandOverStuff" : "/Login"}
             className=" link btn sectionSimpleSteps__rowDown--btn"
           >
             <p>Oddaj</p>Rzeczy

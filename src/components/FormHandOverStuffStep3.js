@@ -1,12 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { editFormStep3 } from "../reduxActions/actions";
+import { useSelector } from "react-redux";
 
 function FormHandOverStuffStep3(props) {
   const { setStep } = props;
-  const [location, setLocation] = useState("— wybierz —");
-  const [whoYouHelp, setWhoYouHelp] = useState([]);
-  const [nameOrganization, setNameOrganization] = useState("");
+  const formSteps = useSelector((state) => state.formSteps);
+  const [location, setLocation] = useState(formSteps.location);
+  const [whoYouHelp, setWhoYouHelp] = useState(formSteps.whoYouHelp || []);
+  const [nameOrganization, setNameOrganization] = useState(
+    formSteps.nameOrganization
+  );
+
+  let objWhoWeHelp = [
+    {
+      name: "dzieciom",
+      id: "checkbox1",
+    },
+    {
+      name: "samotnym matkom",
+      id: "checkbox2",
+    },
+    {
+      name: "bezdomnym",
+      id: "checkbox3",
+    },
+    {
+      name: "niepełnosprawnym",
+      id: "checkbox4",
+    },
+    {
+      name: "osobom starszym",
+      id: "checkbox5",
+    },
+  ];
+
+  let objLocation = [
+    {
+      name: "Poznań",
+    },
+    {
+      name: "Warszawa",
+    },
+    {
+      name: "Kraków",
+    },
+    {
+      name: "Wrocław",
+    },
+    {
+      name: "Katowice",
+    },
+  ];
+
   const arrowRiverse = () => {
     const arrow = document.querySelector("#customArrow");
     const optionsHide = document.querySelector("#listOptions");
@@ -19,6 +65,18 @@ function FormHandOverStuffStep3(props) {
   const handleOnSubmit = () => {
     dispatch(editFormStep3(location, whoYouHelp, nameOrganization));
   };
+
+  const handleCheck = () => {
+    objWhoWeHelp.forEach((singleElement) => {
+      const checkbox = document.querySelector(`#${singleElement.id}`);
+      if (whoYouHelp.includes(singleElement.name)) {
+        checkbox.checked = true;
+      }
+    });
+  };
+  useEffect(() => {
+    handleCheck();
+  }, []);
 
   return (
     <>
@@ -48,36 +106,18 @@ function FormHandOverStuffStep3(props) {
                     id="listOptions"
                     className="customSelectContainer__optionsStep3 hide"
                   >
-                    <div
-                      onClick={(e) => setLocation("Poznań")}
-                      className="customSelectContainer__option optionStep3"
-                    >
-                      Poznań
-                    </div>
-                    <div
-                      onClick={(e) => setLocation("Warszawa")}
-                      className="customSelectContainer__option optionStep3"
-                    >
-                      Warszawa
-                    </div>
-                    <div
-                      onClick={(e) => setLocation("Kraków")}
-                      className="customSelectContainer__option optionStep3"
-                    >
-                      Kraków
-                    </div>
-                    <div
-                      onClick={(e) => setLocation("Wrocław")}
-                      className="customSelectContainer__option optionStep3"
-                    >
-                      Wrocław
-                    </div>
-                    <div
-                      onClick={(e) => setLocation("Katowice")}
-                      className="customSelectContainer__option optionStep3"
-                    >
-                      Katowice
-                    </div>
+                    {objLocation.map((singleInfo) => {
+                      return (
+                        <>
+                          <div
+                            onClick={(e) => setLocation(singleInfo.name)}
+                            className="customSelectContainer__option optionStep3"
+                          >
+                            {singleInfo.name}
+                          </div>
+                        </>
+                      );
+                    })}
                   </div>
                 </div>
                 <span
@@ -88,61 +128,30 @@ function FormHandOverStuffStep3(props) {
             </div>
             <h3 className="stepsSubtitle">Komu chcesz pomóc?</h3>
             <div className="customCheckboxContainer">
-              <input
-                class="hide"
-                id="checkbox1"
-                type="checkbox"
-                onChange={() => {
-                  setWhoYouHelp([...whoYouHelp, "dzieciom"]);
-                }}
-              ></input>
-              <label className="customCheckbox" for="checkbox1">
-                dzieciom
-              </label>
-              <input
-                class="hide"
-                id="checkbox2"
-                type="checkbox"
-                onChange={() => {
-                  setWhoYouHelp([...whoYouHelp, "samotnym matkom"]);
-                }}
-              ></input>
-              <label className="customCheckbox" for="checkbox2">
-                samotnym matkom
-              </label>
-              <input
-                class="hide"
-                id="checkbox3"
-                type="checkbox"
-                onChange={() => {
-                  setWhoYouHelp([...whoYouHelp, "bezdomnym"]);
-                }}
-              ></input>
-              <label className="customCheckbox" for="checkbox3">
-                bezdomnym
-              </label>
-              <input
-                class="hide"
-                id="checkbox4"
-                type="checkbox"
-                onChange={() => {
-                  setWhoYouHelp([...whoYouHelp, "niepełnosprawnym"]);
-                }}
-              ></input>
-              <label className="customCheckbox" for="checkbox4">
-                niepełnosprawnym
-              </label>
-              <input
-                class="hide"
-                id="checkbox5"
-                type="checkbox"
-                onChange={() => {
-                  setWhoYouHelp([...whoYouHelp, "osobom starszym"]);
-                }}
-              ></input>
-              <label className="customCheckbox" for="checkbox5">
-                osobom starszym
-              </label>
+              {objWhoWeHelp.map((singleInfo) => {
+                return (
+                  <>
+                    <input
+                      class="hide"
+                      type="checkbox"
+                      id={singleInfo.id}
+                      name={singleInfo.name}
+                      onChange={(e) => {
+                        if (whoYouHelp.includes(e.target.name)) {
+                          setWhoYouHelp((prev) =>
+                            prev.filter((element) => element !== e.target.name)
+                          );
+                        } else {
+                          setWhoYouHelp([...whoYouHelp, e.target.name]);
+                        }
+                      }}
+                    ></input>
+                    <label className="customCheckbox" for={singleInfo.id}>
+                      {singleInfo.name}
+                    </label>
+                  </>
+                );
+              })}
             </div>
             <div className="customInputContainer">
               <h3 className="stepsSubtitle">
@@ -151,6 +160,7 @@ function FormHandOverStuffStep3(props) {
               <input
                 className="customInput customInputStep3"
                 type="text"
+                value={nameOrganization}
                 onChange={(e) => setNameOrganization(e.target.value)}
               ></input>
             </div>

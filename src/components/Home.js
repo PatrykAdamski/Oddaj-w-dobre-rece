@@ -7,13 +7,14 @@ import HomeAboutUs from "./HomeAboutUs";
 import HomeContact from "./HomeContact";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
 
-export default function Home() {
+export default function Home(props) {
+  const { user } = props;
   return (
     <>
-      <HomeHeader />
+      <HomeHeader user={user} />
       <HomeThreeColumns />
       <Element name="HomeSimpleSteps">
-        <HomeSimpleSteps />
+        <HomeSimpleSteps user={user} />
       </Element>
       <Element name="HomeAboutUs">
         <HomeAboutUs />

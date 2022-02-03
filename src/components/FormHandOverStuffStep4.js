@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { editFormStep4 } from "../reduxActions/actions";
-import { useSelector } from "react-redux";
 
 function FormHandOverStuffStep4(props) {
   const { setStep } = props;
