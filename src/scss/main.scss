@@ -1,7 +1,10 @@
 //******** Reset **********
 @import "./settings/reset";
+
+//******** Settings **********
 @import "./settings/fonts";
 @import "./settings/colors";
+@import "./settings/mixins";
 
 //******** Base **********
 @import "./generic/base";
@@ -26,3 +29,6 @@
 @import "./elements/formHandOverStuffStep4";
 @import "./elements/formHandOverStuffStepSummary";
 @import "./elements/formHandOverStuffStepThankYou";
+@import "./elements/footer";
+@import "./elements/hamburgerMenu";
+@import "./elements/navigationSignUp.scss";

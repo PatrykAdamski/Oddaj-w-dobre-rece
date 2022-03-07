@@ -11,7 +11,9 @@ export default function Home(props) {
   const { user } = props;
   return (
     <>
-      <HomeHeader user={user} />
+      <Element name="HomeHeader">
+        <HomeHeader user={user} />
+      </Element>
       <HomeThreeColumns />
       <Element name="HomeSimpleSteps">
         <HomeSimpleSteps user={user} />

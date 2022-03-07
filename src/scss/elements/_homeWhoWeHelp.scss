@@ -3,16 +3,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 110vh;
+  height: 120vh;
+  @include smallerTablet {
+    font-size: 1.2em;
+  }
+  @include mobile {
+    height: auto;
+  }
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include mobile {
+      margin-top: 5vh;
+      width: 100%;
+    }
 
     &--buttons {
       display: flex;
       justify-content: space-around;
       width: 50vw;
+      @include mobile {
+        width: 100%;
+      }
     }
   }
   &__title {
@@ -25,6 +38,9 @@
     text-transform: none;
     border: 0.75px solid #fff;
     transition: 0.2s;
+    @include mobile {
+      width: 30%;
+    }
     &:hover {
       border-color: $font-color;
     }

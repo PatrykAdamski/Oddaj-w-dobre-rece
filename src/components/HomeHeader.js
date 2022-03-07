@@ -16,7 +16,7 @@ export default function HomeHeader(props) {
           <div className="header__intro--wrap">
             <Link
               to={user ? "/FormHandOverStuff" : "/Login"}
-              className="link btn header__intro--button"
+              className="button__link btn header__intro--button"
             >
               <p>Oddaj</p> rzeczy
             </Link>

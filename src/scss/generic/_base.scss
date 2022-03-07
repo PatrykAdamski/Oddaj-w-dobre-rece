@@ -1,5 +1,14 @@
 body {
   font-family: $font-base;
+  @include tablet {
+    font-size: 14px;
+  }
+  @include mobile {
+    font-size: 10px;
+  }
+  @include smallerTablet {
+    font-size: 10px;
+  }
 }
 
 .ornament {
@@ -24,9 +33,14 @@ body {
   padding: 10px 0;
   cursor: pointer;
   transition: 0.2s;
-
   &:hover {
     border-color: $ornament-color;
+  }
+  @include notebook {
+    font-size: 1.75em;
+  }
+  @include mobile {
+    background-color: transparent;
   }
 }
 

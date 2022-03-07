@@ -3,6 +3,14 @@
   height: 35vh;
   display: flex;
   justify-content: space-around;
+  @include mobile {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+  @include smallerTablet {
+    font-size: 14px;
+  }
 
   &__column {
     display: flex;
@@ -11,6 +19,9 @@
     justify-content: space-evenly;
     align-items: center;
     margin: 5vh 0;
+    @include mobile {
+      width: 90%;
+    }
 
     &--number {
       font-size: 5.625em;
@@ -23,6 +34,14 @@
       text-transform: uppercase;
       color: $font-color;
       letter-spacing: -0.36px;
+      text-align: center;
+      @include mobile {
+        font-size: 1.5em;
+        text-align: center;
+      }
+      @include tablet {
+        text-align: center;
+      }
     }
 
     &--description {
@@ -30,6 +49,13 @@
       color: $font-color;
       letter-spacing: -0.32px;
       text-align: center;
+      @include mobile {
+        margin-top: 10px;
+        font-size: 1.3em;
+      }
+      @include tablet {
+        margin-top: 15px;
+      }
     }
   }
 }

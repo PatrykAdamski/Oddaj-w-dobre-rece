@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import HomeContact from "./HomeContact";
 import FormHandOverStuffSteps from "./FormHandOverStuffSteps";
 
-function FormHandOverStuff() {
+function FormHandOverStuff(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
-      <header className="header">
+      <header className="header headerHandOverStuff">
         <div className="formHandOverStuff__image"></div>
-        <div className="header__intro">
+        <div className="header__intro headerHandOverStuff__intro">
           <h1 className="header__intro--title">
             Oddaj rzeczy, których już nie chcesz
           </h1>

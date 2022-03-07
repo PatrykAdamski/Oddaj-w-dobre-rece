@@ -1,0 +1,34 @@
+.navSignUp {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+  @include mobile {
+    justify-content: center;
+    margin-right: 0;
+  }
+  &__button {
+    padding: 10px 30px;
+    margin: 0 5px;
+    border: 0.75px solid #fff;
+    transition: 0.2s;
+    border-radius: 2px;
+    font-size: 0.875em;
+    @include mobile {
+      padding: 5px 15px;
+      font-size: 1em;
+      &:nth-child(1) {
+        display: none;
+      }
+    }
+    @include tablet {
+      font-size: 1.5em;
+    }
+    &:hover {
+      border-color: $ornament-color;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $font-color;
+  }
+}

@@ -1,5 +1,6 @@
 .formHandOverStuff {
   color: $font-color;
+  margin-right: 40px;
 
   &__margin {
     margin-top: 20px;
@@ -11,6 +12,7 @@
     background-repeat: no-repeat;
     width: 50%;
     height: 100vh;
+    //
   }
   &__steps {
     text-align: center;
