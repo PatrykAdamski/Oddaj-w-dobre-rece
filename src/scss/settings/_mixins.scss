@@ -26,6 +26,11 @@
     @content;
   }
 }
+@mixin smallScreen {
+  @media (max-width: 359px) {
+    @content;
+  }
+}
 
 @mixin orientationLandscape {
   @media (orientation: landscape) and (max-width: 767px) {

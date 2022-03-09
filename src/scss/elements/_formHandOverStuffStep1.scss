@@ -5,6 +5,18 @@
   width: 60%;
   height: 100%;
   padding-left: 100px;
+  @include notebook {
+    width: 70%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
   &__stepNumber {
     font-size: 1.375em;

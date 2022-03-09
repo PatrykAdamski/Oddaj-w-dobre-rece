@@ -9,7 +9,7 @@
   top: 70px;
   right: 70px;
   display: none;
-  @include mobile {
+  @include smallerTablet {
     display: block;
   }
 

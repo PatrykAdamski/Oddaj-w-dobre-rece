@@ -1,16 +1,36 @@
 .adressAndDateContainer {
   display: flex;
   justify-content: space-between;
+  @include tablet {
+    flex-direction: column;
+    font-size: 1.3em;
+  }
   & .pickupAdressContainer {
-    width: 35%;
+    width: 40%;
+    @include notebook {
+      width: 48%;
+    }
+    @include tablet {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
   & .dateOfPickupContainer {
-    width: 35%;
+    width: 40%;
+    @include notebook {
+      width: 48%;
+    }
+    @include tablet {
+      width: 100%;
+    }
     & .singleValueWrap {
       &:nth-last-child(1) {
         align-items: flex-start;
         & input:nth-last-of-type(1) {
           height: 100px;
+          @include tablet {
+            height: 60px;
+          }
         }
       }
     }
@@ -20,5 +40,12 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  & .customInput {
+    width: 100%;
   }
 }

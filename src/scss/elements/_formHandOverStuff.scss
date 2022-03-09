@@ -1,6 +1,8 @@
 .formHandOverStuff {
   color: $font-color;
-  margin-right: 40px;
+  @include notebook {
+    font-size: 12px;
+  }
 
   &__margin {
     margin-top: 20px;
@@ -11,8 +13,19 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 50%;
-    height: 100vh;
-    //
+    height: 100%;
+    @include tablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+    }
+    @include smallerTablet {
+      width: 55%;
+    }
+    @include mobile {
+      width: 60%;
+    }
   }
   &__steps {
     text-align: center;
@@ -28,6 +41,19 @@
     height: 200px;
     font-size: 1.375em;
     font-weight: 300;
+    @include notebook {
+      width: 150px;
+      height: 150px;
+    }
+    @include smallerTablet {
+      width: 140px;
+      height: 140px;
+      font-size: 1.2em;
+    }
+    @include mobile {
+      width: 120px;
+      height: 120px;
+    }
 
     &--numberStep {
       font-size: 2em;
@@ -39,6 +65,12 @@
     &--wrap {
       display: flex;
       margin-top: 70px;
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
     }
     &--rectangle {
       position: absolute;
@@ -46,6 +78,48 @@
       height: 170px;
       border: 1px solid $font-color;
       transform: rotate(45deg);
+      @include notebook {
+        width: 130px;
+        height: 130px;
+      }
+      @include smallerTablet {
+        width: 120px;
+        height: 120px;
+      }
+      @include mobile {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+.headerHandOverStuff {
+  height: 100vh;
+  @include tablet {
+    display: flex;
+    justify-content: flex-end;
+  }
+  @include mobile {
+    justify-content: center;
+    align-items: center;
+    height: 130vh;
+  }
+  @include smallerMobile {
+    height: 145vh;
+  }
+  @include smallScreen {
+    height: 170vh;
+  }
+  &__intro {
+    margin-right: 40px;
+    @include tablet {
+      width: 70%;
+    }
+    @include mobile {
+      width: 100%;
+      margin-right: 0px;
+      margin-top: 70px;
     }
   }
 }

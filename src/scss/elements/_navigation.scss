@@ -2,11 +2,15 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 100px;
-  @include tablet {
-    margin-right: 0;
-    justify-content: center;
+  @include notebook {
+    margin-right: 50px;
   }
-  @include mobile {
+  @include tablet {
+    margin-right: 0px;
+    justify-content: flex-end;
+    font-size: 10px;
+  }
+  @include smallerTablet {
     position: fixed;
     z-index: 1;
     top: 0;
@@ -17,14 +21,15 @@
   }
 
   &__container {
-    position: relative;
+    position: absolute;
     width: 100%;
     margin-top: 20px;
+    z-index: 1;
   }
 
   &__main {
     margin-top: 20px;
-    @include mobile {
+    @include smallerTablet {
       margin-top: 0;
     }
   }
@@ -32,7 +37,7 @@
   &__main--list {
     text-decoration: none;
     display: flex;
-    @include mobile {
+    @include smallerTablet {
       flex-direction: column;
       justify-content: center;
       width: 100%;
@@ -46,7 +51,7 @@
     transition: 0.2s;
     border-radius: 2px;
     font-size: 1.125em;
-    @include mobile {
+    @include smallerTablet {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -89,7 +94,7 @@
   cursor: pointer;
 }
 .nav .link {
-  @include mobile {
+  @include smallerTablet {
     color: #fff;
   }
 }
@@ -97,7 +102,7 @@
 .nav__user {
   font-weight: 600;
 }
-@include mobile {
+@include smallerTablet {
   .nav--active {
     display: none;
   }

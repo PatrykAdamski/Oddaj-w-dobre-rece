@@ -8,12 +8,12 @@ function FormHandOverStuff(props) {
   }, []);
   return (
     <>
-      <header className="header headerHandOverStuff">
+      <section className="header headerHandOverStuff">
         <div className="formHandOverStuff__image"></div>
         <div className="header__intro headerHandOverStuff__intro">
-          <h1 className="header__intro--title">
+          <h2 className="header__intro--title">
             Oddaj rzeczy, których już nie chcesz
-          </h1>
+          </h2>
           <h2 className="header__intro--title formHandOverStuff__margin">
             POTRZEBUJĄCYM
           </h2>
@@ -62,7 +62,7 @@ function FormHandOverStuff(props) {
             </div>
           </div>
         </div>
-      </header>
+      </section>
       <FormHandOverStuffSteps />
       <HomeContact />
     </>

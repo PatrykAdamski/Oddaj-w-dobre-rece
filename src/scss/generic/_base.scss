@@ -1,5 +1,8 @@
 body {
   font-family: $font-base;
+  @include notebook {
+    font-size: 14px;
+  }
   @include tablet {
     font-size: 14px;
   }
@@ -48,6 +51,14 @@ body {
   margin-right: 50px;
 }
 
+.containerBtnNextOrBack {
+  @include smallerMobile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .btnNextOrBack {
   width: 180px;
   height: 80px;
@@ -60,6 +71,10 @@ body {
   &:hover {
     background-color: $ornament-color;
     cursor: pointer;
+  }
+  @include mobile {
+    width: 150px;
+    height: 60px;
   }
 }
 

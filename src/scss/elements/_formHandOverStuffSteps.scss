@@ -5,6 +5,18 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 100px;
+  @include smallerTablet {
+    padding-right: 120px;
+  }
+  @include mobile {
+    padding-left: 30px;
+  }
+  @include smallerMobile {
+    padding-right: 30px;
+  }
+  @include smallScreen {
+    height: 20vh;
+  }
   &--title {
     font-size: 2.25em;
     font-weight: 600;
@@ -21,4 +33,21 @@
   background-image: url(../../assets/Background-Form.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top right;
+  @include notebook {
+    background-position: top center;
+  }
+  @include tablet {
+    background-position: top left;
+    height: 100vh;
+  }
+  @include mobile {
+    height: 120vh;
+  }
+  @include smallerMobile {
+    height: 130vh;
+  }
+  @include smallScreen {
+    height: 150vh;
+  }
 }

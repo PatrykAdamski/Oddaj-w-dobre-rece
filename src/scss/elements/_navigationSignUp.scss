@@ -2,6 +2,13 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 100px;
+  @include notebook {
+    margin-right: 60px;
+  }
+  @include tablet {
+    margin-right: 0px;
+    font-size: 10px;
+  }
   @include mobile {
     justify-content: center;
     margin-right: 0;

@@ -3,9 +3,20 @@
     display: flex;
     align-items: center;
     margin-bottom: 100px;
+    @include mobile {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+    @include smallerMobile {
+      margin-bottom: 50px;
+    }
 
     & label {
       font-size: 1.5em;
+      @include mobile {
+        margin-bottom: 30px;
+      }
     }
   }
 }
@@ -13,6 +24,12 @@
 .customSelectContainer {
   position: relative;
   margin-left: 25px;
+  @include mobile {
+    margin-left: 0px;
+  }
+  @include smallerMobile {
+    width: 100%;
+  }
   &__select {
     position: relative;
     display: flex;
@@ -24,6 +41,9 @@
     padding-left: 30px;
     font-size: 1.5em;
     font-weight: 300;
+    @include smallerMobile {
+      width: 100%;
+    }
   }
   &__options {
     position: absolute;
