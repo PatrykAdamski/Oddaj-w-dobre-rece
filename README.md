@@ -6,10 +6,10 @@ Oddaj w dobre ręce is a project for CodersLab Javascript Developer. It is a web
 
 ## Technologies
 
-*Sass
-*JavaScript
-*React && hooks && redux
-*firebase
+* Sass
+* JavaScript
+* React && hooks && redux
+* firebase
 
 ## Feautures
 
